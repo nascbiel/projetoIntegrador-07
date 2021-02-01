@@ -28,9 +28,6 @@ public class Categoria {
 	private String nome;
 	
 	@NotNull
-	private double medida;
-	
-	@NotNull
 	@Size(min = 2, max = 80)
 	private String setor;
 	
@@ -55,14 +52,6 @@ public class Categoria {
 		this.nome = nome;
 	}
 
-	public double getMedida() {
-		return medida;
-	}
-
-	public void setMedida(double medida) {
-		this.medida = medida;
-	}
-
 	public String getSetor() {
 		return setor;
 	}
@@ -72,4 +61,4 @@ public class Categoria {
 	}
 	
 	
-}
+} // 8
