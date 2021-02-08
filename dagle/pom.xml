@@ -9,9 +9,15 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>generation.org</groupId>
-	<artifactId>blogPessoal</artifactId>
+
+	<artifactId>dagle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blogPessoal</name>
+	<name>dagle</name>
+
+	<artifactId>dagle</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>dagle</name>
+
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
