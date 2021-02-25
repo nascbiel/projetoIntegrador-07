@@ -1,3 +1,11 @@
-.bg-color{
+.bg-footer{
     background-color: #B0D9FF;
+}
+
+.bg-footer-preto{
+    background-color: #2B353C;
+}
+
+.fs-15{
+    font-size: 15pt;
 }
