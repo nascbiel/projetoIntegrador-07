@@ -9,16 +9,17 @@ import { ServicosComponent } from './servicos/servicos.component';
 
 const routes: Routes = [
 
-  {path:'',redirectTo:'serviços',pathMatch:'full'},
+  {path:'',redirectTo:'login',pathMatch:'full'},
 
 {path:'login',component:LoginComponent},
 {path:'cadastrar',component:CadastrarComponent},
 
 {path:'home',component:HomeComponent},
 {path:'categoria',component:CategoriaComponent},
-
 {path:'contato',component:ContatoComponent},
 {path:'serviços',component:ServicosComponent}
+
+
 ];
 
 @NgModule({
