@@ -11,6 +11,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { CategoriaComponent } from './categoria/categoria.component';
+import { ContatoComponent } from './contato/contato.component';
+import { ServicosComponent } from './servicos/servicos.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CategoriaComponent } from './categoria/categoria.component';
     LoginComponent,
     CadastrarComponent,
     HomeComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    ContatoComponent,
+    ServicosComponent
   ],
   imports: [
     BrowserModule,
