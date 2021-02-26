@@ -33,3 +33,11 @@ section{
 .box h3{
     text-transform: uppercase;
 }
+
+.bg-btn{
+    background-color: #1371FF;
+}
+
+.bg-iniciar{
+    background-color: #71BBFF;
+}
