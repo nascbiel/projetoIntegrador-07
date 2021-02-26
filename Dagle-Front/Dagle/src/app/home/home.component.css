@@ -1,7 +1,26 @@
-.img-bg {
-  
-    min-height: 700px;
-
-    background-size: cover;
-    background-repeat: no-repeat;
+.fs-14{
+    font-size: 14pt;
 }
+
+.bg-faixa{
+    background-color: #A5E1F4;
+}
+
+.color-fonte{
+
+    color: #004C93;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("https://i.imgur.com/hZmntxH.jpg");
+  
+    /* Set a specific height */
+    height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

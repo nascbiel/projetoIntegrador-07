@@ -3,9 +3,13 @@
 }
 
 .bg-footer-preto{
-    background-color: #2B353C;
+    background-color: #063469;
 }
 
 .fs-15{
     font-size: 15pt;
+}
+
+.fs-9{
+    font-size: 9pt;
 }
