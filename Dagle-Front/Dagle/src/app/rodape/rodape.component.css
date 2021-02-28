@@ -3,7 +3,7 @@ footer{
 }
 
 .bg-footer-preto{
-    background-color: #0f3158;
+    background-color: #0b223d;
 }
 .color-fonte{
     color: #2967a0;
@@ -19,7 +19,7 @@ footer{
     font-size: 9pt;
 }
 .color-copy{
-    color: rgb(192, 192, 192);
+    color: gray;
 }
 input{
     background-color: transparent;
