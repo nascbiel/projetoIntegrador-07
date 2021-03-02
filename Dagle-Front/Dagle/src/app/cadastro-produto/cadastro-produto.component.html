@@ -8,7 +8,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="nome">Nome do Produto:</label>
-                        <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome" placeholder="Digite o nome do produto">
+                        <input [(ngModel)]='produto.nome' type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do produto">
                     </div>
                 </div>
                 <h5 class="mt-3 text-secondary">Dados Gerais</h5>
@@ -17,16 +17,16 @@
 
                     <div class="form-group col-md-4">
                         <label for="peso">Peso/Kg:</label>
-                        <input [(ngModel)]='produto.peso' type="text" class="form-control" id="peso" placeholder="Digite a unidade de medida">
+                        <input [(ngModel)]='produto.peso' type="number" class="form-control" name="peso" id="peso" placeholder="Digite a unidade de medida">
                     </div>
 
                     <div class="form-group col-md-4">
                         <label for="qtd">Qtd Estoque (unidade):</label>
-                        <input [(ngModel)]='produto.qtd_estoque' type="text" class="form-control" id="qtd" placeholder="Digite a quantidade estoque">
+                        <input [(ngModel)]='produto.qtd_estoque' type="number" class="form-control" name="qtd" id="qtd" placeholder="Digite a quantidade estoque">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="preco">Preço Unitário:</label>
-                        <input [(ngModel)]='produto.preco' type="text" class="form-control" id="preco"
+                        <input [(ngModel)]='produto.preco' type="number" class="form-control" name="preco" id="preco"
                             placeholder="Digite o preço">
                     </div>
 
@@ -37,12 +37,12 @@
 
                     <div class="form-group col-md-6">
                         <label for="descricao">Descrição:</label>
-                        <input [(ngModel)]='produto.descricao' type="text" class="form-control" id="descricao"
+                        <input [(ngModel)]='produto.descricao' type="text" class="form-control" name="descricao" id="descricao"
                             placeholder="Digite a descrição do produto">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="foto">Link da Foto:</label>
-                        <input [(ngModel)]='produto.foto' type="text" class="form-control" id="foto"
+                        <input [(ngModel)]='produto.foto' type="text" class="form-control" name="foto" id="foto"
                         placeholder="Adicione o link da foto">
                     </div>
 
@@ -53,19 +53,17 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-4">
-                        <label for="categoria">Categoria</label>
-                        <select id="categoria" class="form-control">
-                            <option selected>Escolher...</option>
-                            <option>...</option>
-                        </select>
+                        <label for="nomeCategoria">Categoria</label>
+                        <select name="categoria" id="nomeCategoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                            <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.nome}}</option>
+                            </select>
                     </div>
+
                     <div class="form-group col-md-4">
                         <label for="setor">Setor</label>
-                        <select id="setor" class="form-control">
-                            <option selected>Escolher...</option>
-                            <option>...</option>
-                        </select>
+                        <input type="text" name="setor" class="form-control" [(ngModel)]='categoria.setor'>
                     </div>
+
                 </div>
                 <div class="form-group">
                 <p>Não tem uma categoria?<a data-toggle="modal" data-target="#cadastre" href=""> Cadastre</a> </p>
@@ -114,7 +112,7 @@
         </div>
         <div class="modal-footer d-flex justify-content-center">
           <button type="button" class="btn btn-outline-danger col-md-4 mr-4" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-outline-primary col-md-4" (click)='cadastrar()'>Salvar</button>
+          <button type="button" class="btn btn-outline-primary col-md-4" (click)='cadastrar()' data-dismiss="modal">Salvar</button>
 
         </div>
       </div>

@@ -20,7 +20,7 @@ import com.dagleProject.dagle.repository.CategoriaRepository;
 
 @RestController
 @RequestMapping("/categorias")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CategoriaController {
 	
 	@Autowired

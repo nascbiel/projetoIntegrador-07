@@ -24,10 +24,10 @@ export class CategoriaComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
-    this.findAllCategorias()
+    this.getAllCategorias()
   }
 
-  findAllCategorias(){
+  getAllCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
       this.listaCategoria = resp
     })
@@ -38,7 +38,7 @@ export class CategoriaComponent implements OnInit {
       this.categoria = resp
       alert('Categoria cadastrado com sucesso!')
       this.categoria = new Categoria()
-      this.findAllCategorias()
+      this.getAllCategorias()
     })
   }
 

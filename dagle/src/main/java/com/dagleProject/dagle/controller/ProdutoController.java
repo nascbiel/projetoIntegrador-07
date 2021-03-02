@@ -20,7 +20,7 @@ import com.dagleProject.dagle.repository.ProdutoRepository;
 
 @RestController
 @RequestMapping("/produtos")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
 	
 	@Autowired

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
+import { User } from '../model/User';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -15,14 +16,20 @@ export class CadastroProdutoComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
+  idCategoria: number
 
   produto: Produto = new Produto()
   listaProdutos: Produto[]
+
+  user: User = new User()
+  idUser = environment.id
   
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService
+    
   ) {}
 
   ngOnInit(){
@@ -30,15 +37,31 @@ export class CadastroProdutoComponent implements OnInit {
       //alert('Sua sessão expirou, faça login novamente')
       this.router.navigate(['/login'])
     }
-    this.findAllCategorias()
-    this.findAllProdutos()
+    
+    this.getAllProdutos()
+    this.getAllCategorias()
+  }
+
+  getAllCategorias(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
+      this.listaCategorias = resp
+    })
+  }
+
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
   }
   
+
   findAllCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
       this.listaCategorias = resp
     })
   }
+
+
 
   cadastrar(){ 
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
@@ -49,20 +72,28 @@ export class CadastroProdutoComponent implements OnInit {
     })
   }
 
-  findAllProdutos(){
-    this.produtoService.getAllProduto().subscribe((resp: Produto[])=>{
+  getAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
       this.listaProdutos = resp
     })
   }
 
+
+
   cadastrarProduto(){
-    this.produtoService.postProduto(this.produto).subscribe((resp: Produto)=>{
-      this.produto = resp
-      alert('Produto cadastrado com sucesso!')
-      this.findAllProdutos()
-      this.produto = new Produto()
-      this.router.navigate(['/estoque'])
-    })
+    this.categoria.id = this.idCategoria
+   this.produto.categoria = this.categoria
+
+   this.user.id = this.idUser
+   this.produto.usuario = this.user
+
+   this.produtoService.postProdutos(this.produto).subscribe((resp: Produto) => {
+     this.produto = resp
+     alert('Produto cadastrado com sucesso!')
+     this.produto = new Produto()
+     this.router.navigate(['/estoque'])
+     this.getAllProdutos()
+   })
   }
 
 }

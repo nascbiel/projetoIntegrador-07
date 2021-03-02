@@ -18,11 +18,15 @@ export class ProdutoService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
-  getAllProduto(): Observable<Produto[]>{
+  getAllProdutos(): Observable<Produto[]>{
     return this.http.get<Produto[]>('http://localhost:8080/produtos', this.token)
   }
 
-  postProduto(produto: Produto): Observable<Produto>{
+  getByIdProdutos(id: number): Observable<Produto>{
+    return this.http.get<Produto>(`http://localhost:8080/produtos/${id}`, this.token)
+  }
+
+  postProdutos(produto: Produto): Observable<Produto>{
     return this.http.post<Produto>('http://localhost:8080/produtos', produto, this.token ) 
 
   }

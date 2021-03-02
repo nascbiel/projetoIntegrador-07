@@ -10,6 +10,7 @@ import { EstoqueComponent } from './estoque/estoque.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ServicosComponent } from './servicos/servicos.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 const routes: Routes = [
 
@@ -25,7 +26,8 @@ const routes: Routes = [
 {path: 'cadastro-produto', component: CadastroProdutoComponent},
 {path: 'estoque', component: EstoqueComponent},
 {path: 'categoria-edit/:id', component: CategoriaEditComponent},
-{path: 'categoria-delete/:id', component: CategoriaDeleteComponent}
+{path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
+{path: 'sobre-nos', component: SobreNosComponent}
 
 
 ];
