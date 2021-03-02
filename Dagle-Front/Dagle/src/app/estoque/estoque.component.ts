@@ -17,6 +17,7 @@ export class EstoqueComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
+  idCategoria: number
 
   produto: Produto = new Produto()
   listaProdutos: Produto[]
@@ -46,10 +47,22 @@ export class EstoqueComponent implements OnInit {
     })
   }
 
+  findByIdCategoria(){
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
+      this.categoria = resp
+    })
+  }
+
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
     } ) 
+  }
+
+  findAllCategorias(){
+    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
+      this.listaCategoria = resp
+    })
   }
 
   findByIdUser(){
@@ -58,13 +71,5 @@ export class EstoqueComponent implements OnInit {
     })
   }
 
-  cadastrar(){ 
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
-      this.categoria = resp
-      alert('Categoria cadastrado com sucesso!')
-      this.getAllCategorias()
-      this.categoria = new Categoria()
-    })
-  }
 
 }

@@ -5,7 +5,9 @@ import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.co
 import { CategoriaComponent } from './categoria/categoria.component';
 import { ContatoComponent } from './contato/contato.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { EstoqueComponent } from './estoque/estoque.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -27,7 +29,9 @@ const routes: Routes = [
 {path: 'estoque', component: EstoqueComponent},
 {path: 'categoria-edit/:id', component: CategoriaEditComponent},
 {path: 'categoria-delete/:id', component: CategoriaDeleteComponent},
-{path: 'sobre-nos', component: SobreNosComponent}
+{path: 'sobre-nos', component: SobreNosComponent},
+{path: 'produto-edit/:id', component: ProdutoEditComponent},
+{path: 'produto-delete/:id', component: ProdutoDeleteComponent}
 
 
 ];

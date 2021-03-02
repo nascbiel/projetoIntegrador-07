@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
 
@@ -26,9 +27,9 @@ export class CadastroProdutoComponent implements OnInit {
   
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private categoriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private authService: AuthService
     
   ) {}
 
@@ -53,7 +54,12 @@ export class CadastroProdutoComponent implements OnInit {
       this.categoria = resp
     })
   }
-  
+
+  getAllProdutos(){
+    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
+      this.listaProdutos = resp
+    })
+  }
 
   findAllCategorias(){
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[])=>{
@@ -61,7 +67,11 @@ export class CadastroProdutoComponent implements OnInit {
     })
   }
 
-
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
+    })
+  }
 
   cadastrar(){ 
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
@@ -71,14 +81,6 @@ export class CadastroProdutoComponent implements OnInit {
       this.categoria = new Categoria()
     })
   }
-
-  getAllProdutos(){
-    this.produtoService.getAllProdutos().subscribe((resp: Produto[])=>{
-      this.listaProdutos = resp
-    })
-  }
-
-
 
   cadastrarProduto(){
     this.categoria.id = this.idCategoria
