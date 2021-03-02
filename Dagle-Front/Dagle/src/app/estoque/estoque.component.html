@@ -28,23 +28,25 @@
 
       <div class="tab-pane fade mt-2" id="meusProdutos" role="tabpanel" aria-labelledby="nav-meusProdutos-tab">
           <div class="card-columns">
-            <div class="card text-center" *ngFor='let item of user.produto'>
-              <div class="card-body" >
+            <div class="card text-center" *ngFor='let item of listaProdutos'>
+              <div class="card-body">
                 <h5 class="card-title m-0">{{item.nome}}</h5>
-                <small class="text-muted">{{item.peso}}</small>
-                <small class="text-muted">{{item.qtd_estoque}}</small>
-                <small class="text-muted">{{item.preco}}</small>
-                <small class="text-muted">{{item.descricao}}</small>
+                <p>{{item.peso}}</p>
+                <p>{{item.qtd_estoque}}</p>
+                <p>{{item.preco}}</p>
+                <p>{{item.descricao}}</p>
                 <hr>
-                <small class="text-muted">{{item.categoria.nome}}</small>
-                <small class="text-muted">{{item.categoria.setor}}</small>
+                <!--<small class="text-muted">{{item.categoria.nome}}</small>
+                <small class="text-muted">{{item.categoria.setor}}</small>-->
+                <a [routerLink]="['/produto-edit', item.id]" class="text-info mr-4" href="">Editar</a>
+                <a [routerLink]="['/produto-delete', item.id]" class="text-danger" href="">Apagar</a>
               </div>
             </div>
           </div>
-
+        </div>
 
           
-       <!--  <div class="card-group  mb-4 mt-4 col-md-4">
+       <!--<div class="card-group  mb-4 mt-4 col-md-4">
               <div class="card" *ngFor='let item of user.produto'>
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
@@ -54,13 +56,24 @@
                 </div>
               </div>
           </div>
-      </div>
-
       --> 
 
       <div class="tab-pane fade" id="produtosCategoria" role="tabpanel" aria-labelledby="nav-produtosCategoria-tab">
 
-          Produtos por Categoria
+        <div class="card-columns" *ngFor='let categoria of listaCategoria'>
+          <div class="card text-center" *ngFor='let item of categoria.produto'>
+            <div class="card-body">
+              <h5 class="card-title m-0">{{item.nome}}</h5>
+              <p>{{item.peso}}</p>
+              <p>{{item.qtd_estoque}}</p>
+              <p>{{item.preco}}</p>
+              <p>{{item.descricao}}</p>
+              <hr>
+            </div>
+          </div>
+        </div>
+
+
       </div>
 
 

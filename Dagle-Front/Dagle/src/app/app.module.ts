@@ -19,6 +19,8 @@ import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.co
 import { EstoqueComponent } from './estoque/estoque.component';
 import { CategoriaEditComponent } from './edit/categoria-edit/categoria-edit.component';
 import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-delete.component';
+import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
+import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CategoriaDeleteComponent } from './delete/categoria-delete/categoria-de
     CadastroProdutoComponent,
     EstoqueComponent,
     CategoriaEditComponent,
-    CategoriaDeleteComponent
+    CategoriaDeleteComponent,
+    ProdutoEditComponent,
+    ProdutoDeleteComponent
   ],
   imports: [
     BrowserModule,
