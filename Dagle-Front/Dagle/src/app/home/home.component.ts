@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
     private rouet: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
 
     /*if(environment.token == ''){
       alert('Sua sessão expirou, faça login novamente')
