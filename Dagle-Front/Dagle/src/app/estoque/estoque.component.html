@@ -1,3 +1,13 @@
+<!--Carrosel-->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner d-flex align-items-end">
+    <div class="carousel-item active">
+      <img src="../../assets/VIDEO_1.gif" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+<!--/Carrosel-->
+
 <div class="container mb-5 mt-5" id="postagens">
 
   <div class="row">
@@ -28,47 +38,41 @@
 
       <div class="tab-pane fade mt-2" id="meusProdutos" role="tabpanel" aria-labelledby="nav-meusProdutos-tab">
           <div class="card-columns">
-            <div class="card text-center" *ngFor='let item of listaProdutos'>
+            <div class="card text-center" *ngFor='let item of user.produto'>
               <div class="card-body">
-                <h5 class="card-title m-0">{{item.nome}}</h5>
-                <p>{{item.peso}}</p>
-                <p>{{item.qtd_estoque}}</p>
-                <p>{{item.preco}}</p>
-                <p>{{item.descricao}}</p>
+                <img src="{{item.foto}}" alt="foto produto do usuário" class="img-fluid">
+                <h5 class="card-title m-0">Produto: {{item.nome}}</h5>
                 <hr>
-                <!--<small class="text-muted">{{item.categoria.nome}}</small>
-                <small class="text-muted">{{item.categoria.setor}}</small>-->
-                <a [routerLink]="['/produto-edit', item.id]" class="text-info mr-4" href="">Editar</a>
+                <p class="mt-2">Peso: {{item.peso}} kg</p>
+                <p>Quantidade: {{item.qtd_estoque}} unid.</p>
+                <p>Preço: R${{item.preco}} </p>
+                <p>Descrição: {{item.descricao}}</p>
+                <hr>
+                <p class="text-muted">Nome categoria: {{item.categoria.nome}}</p>
+                <p class="text-muted">Nome setor: {{item.categoria.setor}}</p>
+                <hr>
+                <a [routerLink]="['/produto-edit', item.id]" class="text-info mr-5" href="">Editar</a>
                 <a [routerLink]="['/produto-delete', item.id]" class="text-danger" href="">Apagar</a>
               </div>
             </div>
           </div>
-        </div>
-
-          
-       <!--<div class="card-group  mb-4 mt-4 col-md-4">
-              <div class="card" *ngFor='let item of user.produto'>
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-              </div>
-          </div>
-      --> 
+        </div> 
 
       <div class="tab-pane fade" id="produtosCategoria" role="tabpanel" aria-labelledby="nav-produtosCategoria-tab">
 
         <div class="card-columns" *ngFor='let categoria of listaCategoria'>
           <div class="card text-center" *ngFor='let item of categoria.produto'>
             <div class="card-body">
-              <h5 class="card-title m-0">{{item.nome}}</h5>
-              <p>{{item.peso}}</p>
-              <p>{{item.qtd_estoque}}</p>
-              <p>{{item.preco}}</p>
-              <p>{{item.descricao}}</p>
+              <img src="{{item.foto}}" alt="foto produto do usuário" class="img-fluid">
+              <h5 class="card-title m-0">Produto: {{item.nome}}</h5>
               <hr>
+              <p class="mt-2">Peso: {{item.peso}} kg</p>
+              <p>Quantidade: {{item.qtd_estoque}} unid.</p>
+              <p>Preço: R${{item.preco}} </p>
+              <p>Descrição: {{item.descricao}}</p>
+              <hr>
+              <a [routerLink]="['/produto-edit', item.id]" class="text-info mr-5" href="">Editar</a>
+              <a [routerLink]="['/produto-delete', item.id]" class="text-danger" href="">Apagar</a>
             </div>
           </div>
         </div>
@@ -108,4 +112,3 @@
 
 
 </div>
-

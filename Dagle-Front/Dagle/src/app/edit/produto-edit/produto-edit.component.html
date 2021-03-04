@@ -7,13 +7,16 @@
     </div>
 
     <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-            <div class="form-group col-md-4">
+        <div class="col-md-12">
+            <form>
+            <div class="form-row">
+            <div class="form-group col-md-6">
                 <label for="nome">Nome do Produto:</label>
                 <input [(ngModel)]='produto.nome' type="text" class="form-control" name="nome" id="nome"
                     placeholder="Digite o nome do produto">
             </div>
         </div>
+
         <h5 class="mt-3 text-secondary">Dados Gerais</h5>
         <hr class="mt-3 mb-3">
         <div class="form-row">
@@ -45,31 +48,38 @@
                 <input [(ngModel)]='produto.foto' type="text" class="form-control" name="foto" id="foto"
                     placeholder="Adicione o link da foto">
             </div>
-            <h2 class="mt-2 mb-4">Categoria</h2>
-               
-            <div class="form-row">
-
-                <div class="form-group col-md-4">
-                    <label for="nomeCategoria">Categoria</label>
-                    <select name="categoria" id="nomeCategoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
-                        <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.nome}}</option>
-                        </select>
-                </div>
-
-                <div class="form-group col-md-4">
-                    <label for="setor">Setor</label>
-                    <input type="text" name="setor" class="form-control" [(ngModel)]='categoria.setor'>
-                </div>
-
-            </div>
-
+            
         </div>
+            <hr class="mt-3 mb-3">
+               
+                <div class="form-row">
 
-        <div class="d-flex justify-content-center">
+                    <div class="form-group col-md-6">
+                        <label for="nomeCategoria">Categoria</label>
+                        <select name="categoria" id="nomeCategoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                            <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.nome}}</option>
+                            </select>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="setor">Setor</label>
+                        <input type="text" name="setor" class="form-control" [(ngModel)]='categoria.setor' readonly>
+                    </div>
+
+                </div>
+
+        
+
+        <div class="d-flex justify-content-center mt-4">
             <button class="btn btn-danger mr-4" routerLink='/estoque'>Cancelar</button>
             <button class="btn btn-info" (click)='atualizar()'>Atualizar</button>
         </div>
 
+    </form>
+        
+    </div>
     </div>
 </div>
+
+
 

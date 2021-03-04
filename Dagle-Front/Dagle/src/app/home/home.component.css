@@ -27,7 +27,7 @@
     background-image: url("https://i.imgur.com/rTyc12J.png");
   
     /* Set a specific height */
-    height: 900px;
+    height: 700px;
   
     /* Create the parallax scrolling effect */
     background-attachment:fixed;
@@ -36,53 +36,7 @@
     background-size:cover; 
   }
 
-
-.sobreposicao {
-    display:inline-block;
-    position:relative;
+.log-grafic{
+  width: 220px;
+  height: 160px;
 }
-.sobreposicao button {
-    position:absolute;
-    top:77%;
-    left:54%;
-    height: 75px;
-    width: 180px;
-}
-
-
-.botao {
-    border-color: #004C93;
-    border-radius: 0;
-    color: #004C93;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    -webkit-transition: color 150ms ease-in-out;
-    transition: color 150ms ease-in-out;
-    font-size: 37px;
-  }
-  .botao:after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    right: 101%;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-            
-    width: 0;
-    height: 100%;   
-    background: #004C93;
-    z-index: -1;
-    -webkit-transition: width 600ms ease-in-out;
-    transition: width 600ms ease-in-out;
-  }
-  .botao:hover {
-    -webkit-transition-duration: 700ms;    
-    color: #fff;
-  }
-  .botao:hover:after {
-    width: 110%;
-  }
-
-  
