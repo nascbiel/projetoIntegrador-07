@@ -39,4 +39,24 @@ export class AuthService {
 
     return ok
   }
+
+  menuLogado(){
+    let ok = false
+
+      if(environment.email != ''){
+        ok = true
+      }
+
+      return ok
+  }
+
+  menuDeslogado(){
+    let ok = false
+
+      if(environment.email == ''){
+        ok = true
+      }
+
+      return ok
+  }
 }

@@ -1,4 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +10,15 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  constructor(
+    public auth: AuthService,
+    private router: Router
+  ) { }
+
+  ngOnInit(
+
+  ) {
   }
 
  /* sair(){
@@ -35,6 +44,14 @@ export class MenuComponent implements OnInit {
       this.minhaNavbar.nativeElement.style.transition = '0.5s'
       this.minhaNavbar.nativeElement.classList.remove("background-color");
     }
+  }
+
+  sair(){
+    this.router.navigate(['/home'])
+    environment.token = ''
+    environment.nome = ''
+    environment.email = ''
+    environment.id = 0
   }
 
 }
