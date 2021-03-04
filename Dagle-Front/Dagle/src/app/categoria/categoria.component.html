@@ -60,7 +60,7 @@
                     <th>{{categoria.id}}</th>
                     <td>{{categoria.nome}}</td>
                     <td>{{categoria.setor}}</td>
-                    <td class="d-flex justify-content-end">
+                    <td *ngIf='auth.adm()' class="d-flex justify-content-end">
                       <button class="btn btn-info mr-3" [routerLink]="['/categoria-edit',categoria.id]">Editar</button>
                       <button class="btn btn-danger" [routerLink]="['/categoria-delete',categoria.id]">Apagar</button>
                     </td>

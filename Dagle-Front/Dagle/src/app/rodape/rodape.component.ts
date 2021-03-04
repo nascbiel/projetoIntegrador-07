@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-rodape',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RodapeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private alertas: AlertasService 
+  ) { }
 
   ngOnInit(){
   }
 
   participar(){
-    alert('mensagem enviada com sucesso!')
+  this.alertas.showAlertInfo('mensagem enviada com sucesso!')
   }
 
 }

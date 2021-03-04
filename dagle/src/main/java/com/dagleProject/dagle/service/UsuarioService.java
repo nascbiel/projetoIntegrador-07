@@ -45,6 +45,7 @@ public class UsuarioService {
 				user.get().setSenha(usuario.get().getSenha());
 				user.get().setEmail(usuario.get().getEmail());
 				user.get().setId(usuario.get().getId());
+				user.get().setTipo(usuario.get().getTipo());
 				
 				return user;
 			}

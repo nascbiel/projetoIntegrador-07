@@ -18,18 +18,23 @@ export class EstoqueComponent implements OnInit {
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
   idCategoria: number
+  nomeCat: string
 
   produto: Produto = new Produto()
   listaProdutos: Produto[]
+  nomePost: string
 
   user: User = new User()
   idUser = environment.id
+
+  key = 'data'
+  reverse =  true
 
   constructor(
     private router: Router,
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
-    private authService: AuthService
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -37,7 +42,6 @@ export class EstoqueComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.getAllCategorias()
-    this.getAllProdutos()
     console.log(this.idUser)
   }
 
@@ -50,6 +54,12 @@ export class EstoqueComponent implements OnInit {
   findByIdCategoria(){
     this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: Categoria) => {
       this.categoria = resp
+    })
+  }
+
+  getAllCategoriaDoUsuario(){
+    this.produtoService.getAllCategoriaDoUsuario(this.idUser,this.idCategoria).subscribe((resp:  Produto[])=>{
+      this.listaProdutos = resp
     })
   }
 
@@ -71,5 +81,24 @@ export class EstoqueComponent implements OnInit {
     })
   }
 
+  findByNomeProduto(){
+    if(this.nomePost == ''){
+      this.getAllProdutos()
+    } else {
+      this.produtoService.getByNomeProduto(this.nomePost).subscribe((resp: Produto[]) =>{
+        this.user.produto = resp
+      })
+    }
+  }
+
+  findByNomeCategoria(){
+    if(this.nomeCat == ''){
+      this.getAllCategorias()
+    } else {
+      this.categoriaService.getByNomeCategoria(this.nomeCat).subscribe((resp: Categoria[]) =>{
+        this.listaCategoria = resp
+      })
+    }
+  }
 
 }

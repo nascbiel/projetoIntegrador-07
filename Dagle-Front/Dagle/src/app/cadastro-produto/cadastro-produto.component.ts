@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { Produto } from '../model/Produto';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { CategoriaService } from '../service/categoria.service';
 import { ProdutoService } from '../service/produto.service';
@@ -29,7 +30,8 @@ export class CadastroProdutoComponent implements OnInit {
     private router: Router,
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService
     
   ) {}
 
@@ -76,7 +78,7 @@ export class CadastroProdutoComponent implements OnInit {
   cadastrar(){ 
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=>{
       this.categoria = resp
-      alert('Categoria cadastrado com sucesso!')
+      this.alertas.showAlertInfo('Categoria cadastrado com sucesso!')
       this.findAllCategorias()
       this.categoria = new Categoria()
     })
@@ -91,7 +93,7 @@ export class CadastroProdutoComponent implements OnInit {
 
    this.produtoService.postProdutos(this.produto).subscribe((resp: Produto) => {
      this.produto = resp
-     alert('Produto cadastrado com sucesso!')
+     this.alertas.showAlertInfo('Produto cadastrado com sucesso!')
      this.produto = new Produto()
      this.router.navigate(['/estoque'])
      this.getAllProdutos()
