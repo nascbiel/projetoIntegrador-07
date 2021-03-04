@@ -10,7 +10,7 @@
 
     <div class="collapse navbar-collapse font-bigShoulders" id="conteudoNavbarSuportado">
 
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" *ngIf='logado()'>
             <li class="nav-item active fs-30 m-0 ml-5 ">
                 <a class="nav-link" routerLink='/home'>HOME</a>
             </li>
@@ -28,7 +28,7 @@
             </li>
         </ul>
         
-        <ul *ngIf='auth.menuDeslogado()' class="navbar-nav ml-auto fs-25">
+        <ul *ngIf='auth.menuDeslogado() && !logado()'  class="navbar-nav ml-auto fs-25">
             <li  class="nav-item active  text-dark font-weight-bold ">
                 <a class="nav-link" routerLink='/login'>Entrar</a>
             </li>
