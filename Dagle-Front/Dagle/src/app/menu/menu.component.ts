@@ -54,5 +54,16 @@ export class MenuComponent implements OnInit {
     environment.id = 0
   }
 
+  logado(){
+
+    let ok: boolean = false
+
+    if(environment.token != ''){
+      ok = true
+    }
+
+    return ok
+  }
+
 }
 
