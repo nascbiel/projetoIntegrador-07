@@ -45,7 +45,7 @@ import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.c
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [{
     provide: LocationStrategy, 
