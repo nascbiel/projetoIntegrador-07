@@ -9,7 +9,11 @@ export class RodapeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+  }
+
+  participar(){
+    alert('mensagem enviada com sucesso!')
   }
 
 }

@@ -36,7 +36,7 @@ export class ProdutoEditComponent implements OnInit {
 
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
-    this.findAllCategorias()
+    this.findAllCategorias()  
   }
 
   findByIdProduto(id: number){
