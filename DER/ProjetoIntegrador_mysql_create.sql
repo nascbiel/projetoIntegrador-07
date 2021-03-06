@@ -1,6 +1,7 @@
 CREATE TABLE `tb_categoria` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`nome` varchar(255) NOT NULL,
+	`origem` varchar(255) NOT NULL,
 	`setor` varchar(255) NOT NULL,
 	PRIMARY KEY (`id`)
 );
@@ -10,9 +11,8 @@ CREATE TABLE `tb_produto` (
 	`categoria_id` INT NOT NULL,
 	`nome` varchar(255) NOT NULL,
 	`preco` DECIMAL(6,2) NOT NULL,
-	`qtd_estoque` INT NOT NULL,
+	`estoque` INT NOT NULL,
 	`descricao` varchar(255) NOT NULL,
-	`peso` DECIMAL(6,2) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
