@@ -42,6 +42,7 @@ export class EstoqueComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.getAllCategorias()
+    this.getAllProdutos()
     console.log(this.idUser)
   }
 

@@ -1,4 +1,4 @@
-#img-bg{ 
+.cadastrar-bg{ 
     
     background-image: url('https://i.imgur.com/44Q4Nw0.png');
 
@@ -8,12 +8,9 @@
     background-size: cover;
 }
 
-.bg-color{
+.bg-color-cadastrar{
     background-color: #001E4B;
     opacity: 90%;
 }
 
-.fs-12{
-    font-size: 12pt;
-}
 

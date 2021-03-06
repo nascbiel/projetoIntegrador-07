@@ -1,20 +1,4 @@
 
-.fs-25{
-    font-size: 25px;
-}
-.fs-30{
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 48px;
-    /* identical to box height */
-    
-    letter-spacing: 0.05em;
-    
-    color: #FFFFFF;
-}
-    
-
 .box {
     position: relative;
     max-width: 530px;

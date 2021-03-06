@@ -1,12 +1,3 @@
-<!--Carrosel-->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner d-flex align-items-end">
-    <div class="carousel-item active">
-      <img src="../../assets/VIDEO_1.gif" class="d-block w-100" alt="...">
-    </div>
-  </div>
-</div>
-<!--/Carrosel-->
 
 <div class="container mb-5 mt-5" id="postagens">
 
@@ -27,8 +18,8 @@
           <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-produtosCategoria-tab" data-toggle="tab"
           href="#produtosCategoria" role="tab" aria-controls="nav-produtosCategoria" aria-selected="false">Produtos por categoria</a>
 
-          <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-produtosCategoria-tab" data-toggle="tab"
-          href="#minhasCategorias" role="tab" aria-controls="nav-minhasCategorias" aria-selected="false">Minhas Categorias</a>
+          <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-categorias-tab" data-toggle="tab"
+          href="#categorias" role="tab" aria-controls="nav-categorias" aria-selected="false"> Categorias</a>
 
       </div>
   </nav>
@@ -41,7 +32,7 @@
         <div class="row d-flex justify-content-center mt-5 mb-5">
           <div class="col-md-5">
             <div class="form-group">
-              <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto que deseja pesquisar" [(ngModel)]='nomePost' (keyup)='findByNomeProduto()'>
+              <input type="text" class="form-control" id="nomeProdutos" placeholder="Digite o nome do produto que deseja pesquisar" [(ngModel)]='nomePost' (keyup)='findByNomeProduto()'>
             </div>
           </div>
         </div>
@@ -109,13 +100,13 @@
       <!--/ProdutosPorCategoria-->
 
 
-      <!--MinhasCategoria-->
-      <div class="tab-pane fade" id="minhasCategorias" role="tabpanel" aria-labelledby="nav-minhasCategorias-tab">
+      <!--categoria-->
+      <div class="tab-pane fade" id="categorias" role="tabpanel" aria-labelledby="nav-categorias-tab">
 
         <div class="row d-flex justify-content-center mt-5 mb-5">
           <div class="col-md-5">
             <div class="form-group">
-              <input type="text" class="form-control" id="nome" placeholder="Digite o nome da categoria que deseja pesquisar" [(ngModel)]='nomeCat' (keyup)='findByNomeCategoria()'>
+              <input type="text" class="form-control" id="nomeCategorias" placeholder="Digite o nome da categoria que deseja pesquisar" [(ngModel)]='nomeCat' (keyup)='findByNomeCategoria()'>
             </div>
           </div>
         </div>
@@ -143,7 +134,7 @@
               </tbody>
             </table>
       </div>
-      <!--/MinhasCategoria-->
+      <!--/categoria-->
 
   </div>
 

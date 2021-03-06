@@ -11,6 +11,9 @@ html {
 .font-bigShoulders {
     font-family: 'Big Shoulders Display', cursive;
 }
+.fs-12{
+    font-size: 12pt;
+}
 .fs-14{
     font-size: 14pt;
 }
@@ -19,4 +22,18 @@ html {
 }
 .fs-25{
     font-size: 25px;
+}
+.fs-28{
+    font-size: 28px;
+}
+.fs-30{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 48px;
+    /* identical to box height */
+    
+    letter-spacing: 0.05em;
+    
+    color: #FFFFFF;
 }

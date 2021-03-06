@@ -1,4 +1,4 @@
-#img-bg{ 
+.login-bg{ 
     
     background-image: url('https://imageshack.com/i/poMPOdzpp');
 
@@ -9,7 +9,7 @@
 
 }
 
-.bg-color{
+.bg-color-login{
     background-color: #001E4B;
     opacity: 95%;
 }
