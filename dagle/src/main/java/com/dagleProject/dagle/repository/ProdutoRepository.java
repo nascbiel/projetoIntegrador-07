@@ -17,4 +17,6 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 @Query(value = "SELECT * FROM dagle.produto where usuario_id = :idUsuario and categoria_id = :idCategoria", nativeQuery = true)
 public List<Produto> buscarProdutoPorIdUsuarioIdCategoria(@Param("idUsuario") long idUsuario,@Param("idCategoria") long idCategoria);
 
+
+
 }
