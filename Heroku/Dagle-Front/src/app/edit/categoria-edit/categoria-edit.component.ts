@@ -24,6 +24,7 @@ export class CategoriaEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
 
     if(environment.token == ''){
       this.alertas.showAlertDanger('Você precisa estar logado para acessar essa página!')
@@ -44,7 +45,12 @@ export class CategoriaEditComponent implements OnInit {
     this.categoriaService.putCategoria(this.categoria).subscribe((resp:Categoria)=>{
       this.categoria = resp
       this.alertas.showAlertInfo('Categoria atualizada com sucesso!')
-      this.router.navigate(['/estoque'])
+      this.router.navigate(['/categoria'])
+    },erro => {
+      if(erro.status==400){
+        this.alertas.showAlertDanger('Não é possível editar uma categoria que já tenha seus produtos ou de outros usuários relacionados a ela, crie uma nova!')
+        this.router.navigate(['/categoria'])
+      }
     })
   }
 
@@ -53,7 +59,7 @@ export class CategoriaEditComponent implements OnInit {
   @HostListener('window:scroll') onWindowScroll() {
     if (window.scrollY > 100.0) { 
       this.minhaNavbar.nativeElement.style.backgroundColor = '#0471eeb6';
-      this.minhaNavbar.nativeElement.style.height = '7.5%'
+      this.minhaNavbar.nativeElement.style.height = '9.5%'
       this.minhaNavbar.nativeElement.style.justifyContent = 'space-between';
       this.minhaNavbar.nativeElement.style.transition = '0.5s'
     } else {
@@ -74,6 +80,6 @@ export class CategoriaEditComponent implements OnInit {
   }
   
   participar(){
-    this.alertas.showAlertInfo('mensagem enviada com sucesso!')
+    this.alertas.showAlertInfo('E-mail cadastrado com sucesso!')
     }
 }

@@ -16,7 +16,7 @@ export class RodapeComponent implements OnInit {
   }
 
   participar(){
-  this.alertas.showAlertInfo('mensagem enviada com sucesso!')
+  this.alertas.showAlertInfo('E-mail cadastrado com sucesso!')
   }
 
 }

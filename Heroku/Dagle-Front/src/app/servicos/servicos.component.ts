@@ -5,6 +5,7 @@ import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import {render} from 'creditcardpayments/creditCardPayments';
 
+
 @Component({
   selector: 'app-servicos',
   templateUrl: './servicos.component.html',
@@ -17,17 +18,6 @@ export class ServicosComponent implements OnInit {
     private router: Router,
     private alertas: AlertasService
   ) { 
-    render(
-      {
-        id :"#myPaypalButtons",
-        currency : "USD",
-        value : "5.00",
-        onApprove: (details) =>
-        {
-          alert("Trlkajwklj")
-        }
-      }
-    );
   }
 
   ngOnInit() {
@@ -38,16 +28,17 @@ export class ServicosComponent implements OnInit {
 
   @HostListener('window:scroll') onWindowScroll() {
     if (window.scrollY > 100.0) { 
-      this.minhaNavbar.nativeElement.style.backgroundColor = '#0471eeb6';
-      this.minhaNavbar.nativeElement.style.height = '7.5%'
+      this.minhaNavbar.nativeElement.style.backgroundColor = '#1d82f562';
+      this.minhaNavbar.nativeElement.style.height = '9.5%'
       this.minhaNavbar.nativeElement.style.justifyContent = 'space-between';
       this.minhaNavbar.nativeElement.style.transition = '0.5s'
-    } else {
-      this.minhaNavbar.nativeElement.style.backgroundColor = 'transparent';
+    } 
+    else {
+      this.minhaNavbar.nativeElement.style.backgroundColor = '#1d82f562';
       this.minhaNavbar.nativeElement.style.height = '11%'
       this.minhaNavbar.nativeElement.style.justifyContent = 'space-between';
       this.minhaNavbar.nativeElement.style.transition = '0.5s'
-      this.minhaNavbar.nativeElement.classList.remove("background-color");
+      
     }
   }
 

@@ -7,10 +7,10 @@ body {
     padding: 0;
 }
 section {
-    background-image: url('../../assets/img/contato.png');
+    background-image: url('https://i.imgur.com/y7PyVWt.png');
     background-size: cover;
     align-items: center;
-    height: 100vh;
+    height: 103vh;
     display: flex;
     justify-content: center;
     
@@ -19,7 +19,7 @@ section {
     position: relative;
     max-width: 700px;
     max-height: 580px;
-    padding: 70px;
+    padding: 60px;
     margin-top: 110px;
     background-color: rgba(255, 255, 255, 0.753);
     box-shadow: 0 5px 35px rgba(0, 0, 0, .5);
@@ -29,3 +29,8 @@ section {
     background-image: linear-gradient(to right, #4facfe 0%, #73bdfd 100%);
 }
 
+@media (max-width: 1220px){
+    section {
+        height: 160vh;
+    }
+}

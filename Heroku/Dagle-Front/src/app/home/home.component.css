@@ -54,3 +54,28 @@
         justify-content: center;
     }
 }
+
+@media(max-width:800px){
+    .ajuste{
+        font-size: 14pt;
+    }
+}
+
+@media(max-width:800px){
+    .ajuste1{
+        font-size: 14pt;
+    }
+}
+
+@media(max-width:800px){
+    .ajuste2{
+        font-size: 18pt;
+    }
+}
+
+@media(max-width:800px){
+    .ajuste3{
+        font-size: 14pt;
+        letter-spacing: 0.0cm;
+    }
+}

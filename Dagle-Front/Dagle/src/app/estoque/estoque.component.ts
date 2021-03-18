@@ -63,6 +63,12 @@ export class EstoqueComponent implements OnInit {
     })
   }
 
+  getAllProdutosUsuario(){
+    this.produtoService.getAllProdutosUsuario(this.idUser).subscribe((resp:  Produto[])=>{
+      this.listaProdutos = resp
+    })
+  }
+
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
@@ -83,7 +89,7 @@ export class EstoqueComponent implements OnInit {
 
   findByNomeProduto(){
     if(this.nomePost == ''){
-      this.getAllProdutos()
+      this.user.produto
     } else {
       this.produtoService.getByNomeProduto(this.nomePost).subscribe((resp: Produto[]) =>{
         this.user.produto = resp

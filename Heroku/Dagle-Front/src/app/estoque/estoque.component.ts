@@ -24,6 +24,7 @@ export class EstoqueComponent implements OnInit {
   produto: Produto = new Produto()
   listaProdutos: Produto[]
   nomePost: string
+ 
 
   user: User = new User()
   idUser = environment.id
@@ -45,8 +46,8 @@ export class EstoqueComponent implements OnInit {
       this.alertas.showAlertDanger('Você precisa estar logado para acessar essa página!')
       this.router.navigate(['/login'])
     }
+    this.getAllProdutosDoUsuario()
     this.getAllCategorias()
-    console.log(this.idUser)
   }
 
   @ViewChild('nav', {static: true}) minhaNavbar:ElementRef;
@@ -54,7 +55,7 @@ export class EstoqueComponent implements OnInit {
   @HostListener('window:scroll') onWindowScroll() {
     if (window.scrollY > 100.0) { 
       this.minhaNavbar.nativeElement.style.backgroundColor = '#0471eeb6';
-      this.minhaNavbar.nativeElement.style.height = '7.5%'
+      this.minhaNavbar.nativeElement.style.height = '9.5%'
       this.minhaNavbar.nativeElement.style.justifyContent = 'space-between';
       this.minhaNavbar.nativeElement.style.transition = '0.5s'
     } else {
@@ -92,6 +93,12 @@ export class EstoqueComponent implements OnInit {
     })
   }
 
+  getAllProdutosDoUsuario(){
+    this.produtoService.getAllProdutosDoUsuario(this.idUser).subscribe((resp:Produto[])=>{
+      this.listaProdutos = resp
+    })
+  }
+
   getAllProdutos(){
     this.produtoService.getAllProdutos().subscribe((resp: Produto[]) => {
       this.listaProdutos = resp
@@ -111,13 +118,13 @@ export class EstoqueComponent implements OnInit {
   }
 
   findByNomeProduto(){
-    if(this.nomePost == ''){
-      this.getAllProdutos()
-    } else {
-      this.produtoService.getByNomeProduto(this.nomePost).subscribe((resp: Produto[]) =>{
-        this.user.produto = resp
-      })
-    }
+      if(this.nomePost == ''){
+        this.getAllProdutosDoUsuario()
+      } else {
+        this.produtoService.getByNomeProduto(this.nomePost).subscribe((resp: Produto[]) =>{
+          this.listaProdutos = resp
+        })
+      }
   }
 
   findByNomeCategoria(){
@@ -131,7 +138,7 @@ export class EstoqueComponent implements OnInit {
   }
 
   participar(){
-    this.alertas.showAlertInfo('mensagem enviada com sucesso!')
+    this.alertas.showAlertInfo('E-mail cadastrado com sucesso!')
     }
 
 }

@@ -30,7 +30,7 @@ export class ContatoComponent implements OnInit {
   @HostListener('window:scroll') onWindowScroll() {
     if (window.scrollY > 100.0) { 
       this.minhaNavbar.nativeElement.style.backgroundColor = '#0471eeb6';
-      this.minhaNavbar.nativeElement.style.height = '7.5%'
+      this.minhaNavbar.nativeElement.style.height = '9.5%'
       this.minhaNavbar.nativeElement.style.justifyContent = 'space-between';
       this.minhaNavbar.nativeElement.style.transition = '0.5s'
     } else {
@@ -62,7 +62,7 @@ export class ContatoComponent implements OnInit {
   }
 
   participar(){
-    this.alertas.showAlertInfo('mensagem enviada com sucesso!')
+    this.alertas.showAlertInfo('E-mail cadastrado com sucesso!')
     }
 
   

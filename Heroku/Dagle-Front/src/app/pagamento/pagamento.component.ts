@@ -21,8 +21,8 @@ export class PagamentoComponent implements OnInit {
     render(
       {
         id :"#myPaypalButtons",
-        currency : "USD",
-        value : "5.00",
+        currency : "BRL",
+        value : "29.90",
         onApprove: (details) =>
         {
           alert("Trlkajwklj")
@@ -40,7 +40,7 @@ export class PagamentoComponent implements OnInit {
   @HostListener('window:scroll') onWindowScroll() {
     if (window.scrollY > 100.0) { 
       this.minhaNavbar.nativeElement.style.backgroundColor = '#0471eeb6';
-      this.minhaNavbar.nativeElement.style.height = '7.5%'
+      this.minhaNavbar.nativeElement.style.height = '9.5%'
       this.minhaNavbar.nativeElement.style.justifyContent = 'space-between';
       this.minhaNavbar.nativeElement.style.transition = '0.5s'
     } else {
